@@ -52,9 +52,21 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #000;
   text-decoration: none;
+  position: relative;
 
-  &:hover {
-    text-decoration: underline;
+  &.animated::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height:1px;
+    width: 1px;
+    background-color: black;
+    transition: width .2s ease-out;
+  }
+
+  &.animated:hover::after {
+    width: 100%;
   }
 }
 `

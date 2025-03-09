@@ -54,12 +54,12 @@ const Header = () => {
         <h1>FAKESTORE</h1>
         <ul>
           <li>
-            <NavLink to="/" viewTransition>
+            <NavLink to="/" className="animated" viewTransition>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/shop" viewTransition>
+            <NavLink to="/shop" className="animated" viewTransition>
               Shop
             </NavLink>
           </li>
