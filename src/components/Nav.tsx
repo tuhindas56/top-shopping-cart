@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { NavLink as RouterNavLink } from "react-router-dom"
 import { ShoppingCart } from "lucide-react"
+import Product from "../product"
 
 const Nav = styled.nav`
   width: 100%;
@@ -40,6 +41,7 @@ const Cart = styled.div`
     place-content: center;
     height: 16px;
     width: 16px;
+    font-size: 0.6rem;
     padding: 0.2rem;
     background-color: black;
     color: white;
@@ -47,7 +49,7 @@ const Cart = styled.div`
   }
 `
 
-const Header = () => {
+const Header = ({ cart }: { cart: Product[] }) => {
   return (
     <header>
       <Nav>
@@ -67,7 +69,12 @@ const Header = () => {
             <NavLink to="/cart" viewTransition>
               <Cart>
                 <ShoppingCart />
-                <span>{0}</span>
+                <span>
+                  {cart.reduce(
+                    (acc, product) => acc + (product.quantity || 0),
+                    0
+                  )}
+                </span>
               </Cart>
             </NavLink>
           </li>
