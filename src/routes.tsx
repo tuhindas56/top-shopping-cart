@@ -1,6 +1,8 @@
 import { RouteObject } from "react-router-dom"
 import Home from "./components/Home"
 import Root from "./components/Root"
+import Shop from "./components/Shop"
+import Cart from "./components/Cart"
 
 const routes: RouteObject[] = [
   {
@@ -12,6 +14,11 @@ const routes: RouteObject[] = [
         index: true,
         element: <Home />,
       },
+      {
+        path: "shop",
+        element: <Shop />,
+      },
+      { path: "cart", element: <Cart /> },
     ],
   },
 ]
