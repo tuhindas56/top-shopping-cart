@@ -107,6 +107,7 @@ const ProductCard = ({
           onChange={(e) => setQuantity(parseInt(e.target.value))}
           min="1"
           max="10"
+          aria-label="quantity"
         />
         <button type="submit">Add to cart</button>
       </form>

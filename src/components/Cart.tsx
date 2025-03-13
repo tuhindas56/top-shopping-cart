@@ -72,7 +72,6 @@ const Cart = () => {
     product: Product
   ) => {
     const quantity = parseInt(e.target.value)
-    console.log(quantity)
     const newCart = cart.map((item: Product) =>
       item.id === product.id ? { ...item, quantity } : item
     )
@@ -117,6 +116,7 @@ const Cart = () => {
                   onChange={(e) => handleChange(e, product)}
                   min="1"
                   max="10"
+                  aria-label="quantity"
                 />
                 <button aria-label="Remove item from cart" type="submit">
                   <Trash2 size={24} />
@@ -131,7 +131,7 @@ const Cart = () => {
           <PurchaseDetails>
             <div>
               <h2>Order Total</h2>
-              <p>
+              <p data-testid="orderTotal">
                 $
                 {cart
                   .reduce((acc, p) => acc + p.price * (p.quantity || 1), 0)

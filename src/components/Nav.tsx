@@ -66,10 +66,10 @@ const Header = ({ cart }: { cart: Product[] }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/cart" viewTransition>
+            <NavLink to="/cart" viewTransition aria-label="Cart">
               <Cart>
                 <ShoppingCart />
-                <span>
+                <span data-testid="cartQuantity">
                   {cart.reduce(
                     (acc, product) => acc + (product.quantity || 0),
                     0
